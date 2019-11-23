@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 80px;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  color: aliceblue;
+  text-align: center;
+  margin-left: 50px;
+}
+
+span {
+  color: pink;
+}
+
+.searching {
+  padding: 20px;
+}
+
+.searching form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.searching input {
+  width: 80%;
+  padding: 8px;
+  margin: 10px;
+}
+
+
+.displayRepo {
+  display: inline;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: 0 auto;
+
+}
+.container-box {
+  width: 400px;
+  height: 300px;
+  background: cyan;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box
+}
+
+.container-box h3 {
+  padding: 10px;
+  text-align: right
+}
+
+.container-box p {
+  padding: 20px 0 40px 0;
+}
+
+.container-box span {
+  color: black;
+}
+
+.container-box a {
+  width: 67px;
+  height: 20px;
+  background: red;
+  padding: 20px;
+  margin-top: 77px;
+  box-sizing: border-box;
+}
+
+.searchButton {
+  background: yellowgreen;
+  padding: 10px;
+  cursor: pointer;
+}
