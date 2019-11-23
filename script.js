@@ -4,8 +4,8 @@ const printName = () => {
 }
 
 
-const $user = document.querySelectorAll('.nickname')
-$user[0].innerHTML = localStorage.getItem('username')
+const $user = document.querySelector('.nickname')
+$user.innerHTML = localStorage.getItem('username')
 // $user[1].innerHTML = localStorage.getItem('username')
 
 
