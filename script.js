@@ -3,10 +3,10 @@ const printName = () => {
   localStorage.setItem('username', $name)
 }
 
-
-const $user = document.querySelectorAll('.nickname')
-$user[0].innerHTML = localStorage.getItem('username')
-$user[1].innerHTML = localStorage.getItem('username')
+const $user = document.querySelector('.nickname')
+const $userFavorites = document.querySelector('.nicknameStar')
+$user.innerHTML = localStorage.getItem('username')
+$userFavorites.innerHTML = localStorage.getItem('username')
 
 
 // ------------------
