@@ -8,27 +8,39 @@
 </head>
 <body>
     <header>
-      <h1 id="greet">Hola <span id="nickname">Cristian</span>!! Bienvenido a <span>GITFIND</span> </h1>
+      <h1 id="greet">Hola <span class="nickname">Cristian</span>!! Bienvenido a <span>GITFIND</span> </h1>
     </header>
 
-    <section class="searching">
-      <form action="">
-        <label for="">search</label>
-        <input type="text" class="searchGitHub" class="main__input" placeholder="Repository..."/>
-        <span> <a class="searchButton">Search</a> </span>
-      </form>
-    </section>
+    <div class="container">
+      <div class="container-search">
+        <section class="searching">
+          <form action="">
+            <label for="">search</label>
+            <input type="text" class="searchGitHub" class="main__input" placeholder="Repository..."/>
+            <span> <a class="searchButton">Search</a> </span>
+          </form>
+        </section>
+    
+        <section class="displayRepo">
+          <!-- <div class="container-box">
+            <h3>Repo Name</h3>
+            <hr>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quasi!</p>
+            <p>cantidad estrellas: <span>452433</span></p>
+            <a href="" target="_blank">Visitar Repo</a>
+            <a href="#" class="star">star</a>
+          </!--> 
+        </section>
+      </div>
 
-    <section class="displayRepo">
-        <!-- <div class="container-box">
-          <h3>Repo Name</h3>
+      <div class="favorites">
+        <div class="container-favorite">
+          <h3>A <span class="nickname">Cristian</span> le gusta</h3>
           <hr>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quasi!</p>
-          <p>cantidad estrellas: <span>452433</span></p>
-          <a href="" target="_blank">Visitar Repo</a>
-          <a href="#" class="star">star</a>
-        </!--> 
-      </section>
+          <h3>Repo Name</h3>
+        </div> 
+      </div>
+    </div>
     
   <!-- <script src="app.js"></script> -->
   <script src="script.js"></script>

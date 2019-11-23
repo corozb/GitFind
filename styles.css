@@ -44,7 +44,7 @@ span {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
 
 }
@@ -83,4 +83,34 @@ span {
   background: yellowgreen;
   padding: 10px;
   cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 80px auto;
+  grid-template-areas: 
+  'search start'
+  'query start';
+}
+
+.searching {
+  grid-area: search;
+}
+
+.displayRepo {
+  grid-area: query;
+}
+
+.favorites {
+  grid-area: star;
+}
+
+.container-favorite {
+  background: plum;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box
 }
