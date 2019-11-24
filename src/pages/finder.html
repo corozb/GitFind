@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Starter Template - Materialize</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Finder</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
@@ -14,14 +15,14 @@
     <div class="container">
       <div class="container-search">
         <section class="searching">
-          <form action="">
+          <form action="" class="inputForm">
             <label for="">search</label>
-            <input type="text" class="searchGitHub" class="main__input" placeholder="Repository..."/>
-            <span> <a class="searchButton">Search</a> </span>
+            <input type="text" id="inputSearch" class="inputSearch" placeholder="repository">
+            <button class="btn-primary" type="submit" id="searchBtn">Search</button>
           </form>
         </section>
-    
-        <section class="displayRepo">
+
+        <div class="displayRepo" id="container">
           <!-- <div class="container-box">
             <h3>Repo Name</h3>
             <hr>
@@ -30,19 +31,25 @@
             <a href="" target="_blank">Visitar Repo</a>
             <a href="#" class="star">star</a>
           </!--> 
-        </section>
+        </div>
+        <p class="errorMessage"></p>
       </div>
 
       <div class="favorites">
         <div class="container-favorite">
-          <h3>A <span class="nicknameStar">Cristian</span> le gusta</h3>
+          <h3>A <span class="nickname">Cristian</span> le gusta</h3>
+          <hr>
+          <h3>Repo Name</h3>
+        </div> 
+        
+        <div class="container-favorite">
+          <h3>A <span class="nickname">Cristian</span> le gusta</h3>
           <hr>
           <h3>Repo Name</h3>
         </div> 
       </div>
     </div>
     
-  <!-- <script src="app.js"></script> -->
-  <script src="script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
