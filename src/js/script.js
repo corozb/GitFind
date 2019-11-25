@@ -1,4 +1,4 @@
-const printName = (storage) => {
+const printName = () => {
   const $name = document.getElementById('textbox').value
   console.log($name)
   localStorage.setItem('username', $name)
@@ -15,7 +15,10 @@ $users.forEach(user => {
 const $inputSearch = document.querySelector('.inputForm')
 const API_URL = `https://api.github.com/search/repositories?`
 const $displayRepo = document.querySelector('.displayRepo')
+const $favorites = document.querySelector('.favorites')
+
 const $errorMessage = document.querySelector('.errorMessage')
+
 
 // text input value
 $inputSearch.addEventListener('submit', (e) => {
@@ -46,14 +49,14 @@ $inputSearch.addEventListener('submit', (e) => {
   }
 
     // Render Query Repository
-  const repoRender = async repoSearch => {
+  const repoRender = repoSearch => {
     // clear search:
     $displayRepo.innerHTML = ''
     $inputSearch.value = ''
     $errorMessage.innerHTML = ''
 
     // Template
-    await repoSearch.map(item => {
+   repoSearch.map(item => {
       $displayRepo.innerHTML += `    
       <div class="container-box">
         <h3>${item.name}</h3>
@@ -64,70 +67,73 @@ $inputSearch.addEventListener('submit', (e) => {
         <a id=${item.id} class="star">😛</a>
       </div>
       `
+  }
 
-      // Favorites
-
-      // const stars = document.querySelectorAll('.star')
-
-      // let repositoryString = JSON.stringify(repository)
-      
-      // stars.forEach(star => {
-      //     star.addEventListener('click', () => {
-      //       console.log('click')
-      //       // funcion que almacene en el localStorage
-      //       localStorage.setItem('repo', repositoryString)
-      //   })
-      // })
     
-
-
-      // -----------------
-      let favList = []
-
-      function addFavorite() {
-        
-        let repository = {
-          id: item.id,
-          repoName: item.name,
-          url: item.html_url
-        }
-
-        favList.push(repository)
-        console.log(favList)
-        localStorage.setItem('repository', JSON.stringify(favList))
-
-      }
-
-      // function getFavorites(){
-      //   let storeFavorites = localStorage.getItem('repository')
-      //   if (storeFavorites == null) {
-      //     favList = []
-      //   } else {
-      //     favList = JSON.parse(storeFavorites)
-      //   }
-        
-      //   return favList
-      // }
-
-      function renderFavorites(fList) {
-        localStorage.setItem('repository', JSON.stringify(fList))
-      }
-
-      const starButton = document.getElementById(item.id)
-      const stars = document.querySelectorAll('.star')
-      // let repositoryString = JSON.stringify(repository)
-      
-      stars.forEach(starButton => {
-        starButton.addEventListener('click', () => {
-          
-            console.log('click: ', starButton)
-            // funcion que almacene en el localStorage
-            addFavorite()
-            // localStorage.setItem('id', item.id)
-        })
-      })
-    }
-
   )
+
+  repoSearch.map(item => {
+    const starButton = document.getElementById(item.id)
+    starButton.addEventListener('click', () => {
+      starButton.classList.add('selected') 
+      addFavorite(item)
+    })
+
+  })
 }
 
+let favList = []
+
+function getFavorites() {
+  let listParse = JSON.parse(localStorage.getItem('repository'))
+  if ( listParse == null ) {
+    favList = []
+  } else {
+    favList = listParse
+    
+    // Template
+    favList.map(item => {
+      $favorites.innerHTML += `    
+      <div class="container-favorite">
+        <h3>A <span class="nickname">Cristian</span> le gusta</h3>
+        <hr>
+        <h3><a href="${item.html_url}" target="_blank">${item.name}</a></h3>
+      </div> 
+      `
+  
+      const $users = document.querySelectorAll('.nickname')
+      $users.forEach(user => {
+        user.innerHTML = localStorage.getItem('username')
+      })
+      
+    }) 
+
+    // removeItem
+
+  }
+
+}
+
+function addFavorite(item) {
+
+  const repository = {
+    id: item.id,
+    name: item.name,
+    url: item.html_url
+  }
+
+  favList.push(repository)
+  localStorage.setItem('repository',  JSON.stringify(favList))
+  console.log(localStorage)
+  
+}
+
+getFavorites()
+
+
+
+
+
+//que agrege sin necesita de actualizar página
+// no repita elementos
+// remover elementos con icono flor
