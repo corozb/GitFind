@@ -61,20 +61,73 @@ $inputSearch.addEventListener('submit', (e) => {
         <p>${item.description}</p>
         <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
         <a href="${item.html_url}"# target="_blank">Visitar Repo</a>
-        <a href="#" class="star">star</a>
+        <a id=${item.id} class="star">😛</a>
       </div>
       `
 
       // Favorites
-      const stars = document.querySelectorAll('.star')
+
+      // const stars = document.querySelectorAll('.star')
+
+      // let repositoryString = JSON.stringify(repository)
       
-      stars.forEach(star => {
-          star.addEventListener('click', () => {
-          console.log('click')
+      // stars.forEach(star => {
+      //     star.addEventListener('click', () => {
+      //       console.log('click')
+      //       // funcion que almacene en el localStorage
+      //       localStorage.setItem('repo', repositoryString)
+      //   })
+      // })
+    
+
+
+      // -----------------
+      let favList = []
+
+      function addFavorite() {
+        
+        let repository = {
+          id: item.id,
+          repoName: item.name,
+          url: item.html_url
+        }
+
+        favList.push(repository)
+        console.log(favList)
+        localStorage.setItem('repository', JSON.stringify(favList))
+
+      }
+
+      // function getFavorites(){
+      //   let storeFavorites = localStorage.getItem('repository')
+      //   if (storeFavorites == null) {
+      //     favList = []
+      //   } else {
+      //     favList = JSON.parse(storeFavorites)
+      //   }
+        
+      //   return favList
+      // }
+
+      function renderFavorites(fList) {
+        localStorage.setItem('repository', JSON.stringify(fList))
+      }
+
+      const starButton = document.getElementById(item.id)
+      const stars = document.querySelectorAll('.star')
+      // let repositoryString = JSON.stringify(repository)
+      
+      stars.forEach(starButton => {
+        starButton.addEventListener('click', () => {
+          
+            console.log('click: ', starButton)
+            // funcion que almacene en el localStorage
+            addFavorite()
+            // localStorage.setItem('id', item.id)
         })
       })
-    
     }
 
   )
 }
+

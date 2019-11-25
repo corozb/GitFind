@@ -114,3 +114,7 @@ span {
   padding: 20px;
   box-sizing: border-box
 }
+
+.star {
+  cursor: pointer;
+}
