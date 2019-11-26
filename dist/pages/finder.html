@@ -21,56 +21,26 @@
 
     <div class="container">
       <div class="toggle">
-        <button class="toggleButton">favoritos</button>
-
+        <!-- <input type="checkbox" id="myCheck" onclick="myFunction()"> -->
       </div>
       
-      <div class="container-search">
-        
-
-        <div class="displayRepo" id="container">
+      <div id="search" class="container-search">
+        <div class="displayRepo">
           
-          <div class="container-box">
-            <h3>Repo Name</h3>
+          <!-- <div class="container-box">
+            <h3>${item.name}</h3>
             <hr>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quasi!</p>
-            <p>cantidad estrellas: <span>452433</span></p>
-            <a href="" target="_blank">Visitar Repo</a>
-            <a href="#" class="star">star</a>
-          </div>
-          
-          <div class="container-box">
-            <h3>Repo Name</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quasi!</p>
-            <p>cantidad estrellas: <span>452433</span></p>
-            <a href="" target="_blank">Visitar Repo</a>
-            <a href="#" class="star">star</a>
-          </div>
-          
-          <div class="container-box">
-            <h3>Repo Name</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quasi!</p>
-            <p>cantidad estrellas: <span>452433</span></p>
-            <a href="" target="_blank">Visitar Repo</a>
-            <a href="#" class="star">star</a>
-          </div>
-          
-          <div class="container-box">
-            <h3>Repo Name</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quasi!</p>
-            <p>cantidad estrellas: <span>452433</span></p>
-            <a href="" target="_blank">Visitar Repo</a>
-            <a href="#" class="star">star</a>
-          </div>
+            <p>${item.description}</p>
+            <p>Estrellas: <span>${item.stargazers_count}</span></p>
+            <button><a class="card__botton" href="${item.html_url}" target="_blank">Visitar Repo</a></button>
+            <button class="star"><a href="javascript:location.reload()" id=${item.id}" class="icon-star-empty"></a></button>
+          </div> -->
 
         </div>
         <p class="errorMessage"></p>
       </div>
 
-      <h2 class="favorites_text">Favoritos</h2>
+      <h2 class="favorites_text">FAVORITOS</h2>
       <div class="favorites">
         <!-- <div class="container-favorite">
           <h3>A <span class="nickname">Cristian</span> le gusta</h3>

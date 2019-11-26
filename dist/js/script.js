@@ -58,15 +58,15 @@ $inputSearch.addEventListener('submit', (e) => {
 
     // Template
    repoSearch.map(item => {
-      $displayRepo.innerHTML += `    
+      $displayRepo.innerHTML += `
       <div class="container-box">
-        <h3>${item.name}</h3>
-        <hr>
-        <p>${item.description}</p>
-        <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
-        <a href="${item.html_url}"# target="_blank">Visitar Repo</a>
-        <a href="javascript:location.reload()" id=${item.id} class="star">😛</a>
-      </div>
+            <h3>${item.name}</h3>
+            <hr>
+            <p>${item.description}</p>
+            <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
+            <button><a class="card__botton" href="${item.html_url}" target="_blank">Visitar Repo</a></button>
+            <a id=${item.id} href="javascript:location.reload()"  class="icon-star-empty"></a>
+          </div>
       `
   }
 
@@ -75,6 +75,7 @@ $inputSearch.addEventListener('submit', (e) => {
 
   repoSearch.map(item => {
     const starButton = document.getElementById(item.id)
+    console.log(starButton)
     starButton.addEventListener('click', () => {
       starButton.classList.add('selected') 
       addFavorite(item)
@@ -98,10 +99,9 @@ function getFavorites() {
     favList.map(item => {
       $favorites.innerHTML += `    
       <div class="container-favorite">
-        <h3>A <span class="nickname">Cristian</span> le gusta</h3>
+        <h3>A <span class="nickname">Cristian</span> le gusta: </h3>
         <hr>
-        <h3><a href="${item.url}" target="_blank">${item.name}</a></h3>
-        <a id=${item.id} class="deleted">😛</a>
+        <h3 class="repoFavo"><a href="${item.url}" target="_blank">${item.name}</a></h3>
       </div> 
       `
   
@@ -129,31 +129,33 @@ function addFavorite(item) {
   
 }
 
+detectScrollEnd = () => {
+  const contentHeight = document.body.offsetHeight
+  const scrollPosition = window.scrollY + window.innerHeight
+  
+  if (scrollPosition >= contentHeight) {
+    if (this.state.nextPage < 26) {
+      this.fetchCharacters()
+    }
+  }
+}
+
 getFavorites()
 
+// function myFunction() {
+//   const checkBox = document.getElementById("myCheck");
+//   const $checkSearch = document.querySelector('.container-search')
 
-// Toggle Button
-// console.log(window.innerWidth)
-// function toggleButton () {
-  // Get the checkbox
-  // const $checkBox = document.getElementById('selectShow');
-  
-  // Get the DOM Elements
-  // const $checkSearch = document.querySelector('.container-search')
-  
-  // if ($checkBox.checked == true){
-    
-    // $favorites.style.display = 'none';
-    // $checkSearch.style.display = "block";
-  // } else {
-    // console.log('deschekeado')
-    // $checkSearch.style.display = "none";
-    // $favorites.style.display = 'block';
+
+
+//   if (checkBox.checked == true){
+//     $favorites.style.display = "block";
+//     $checkSearch.style.display = 'none';
+//   } else {
+//     $favorites.style.display = "none";
+//     $checkSearch.style.display = 'block';
 //   }
+
 // }
 
 
-
-//que agrege sin necesita de actualizar página
-// no repita elementos
-// remover elementos con icono flor
