@@ -4,16 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>GitFind</title>
+  <link rel="stylesheet" href="./dist/css/styles.css">
 </head>
 <body>
-  <div>
-    <form action="./src/pages/finder.html">
-      <input type="text" name="name" id="textbox">
-      <input type="submit" value="Entrar" onclick="printName()">
-    </form>
+  <div class="hero">
+    <div class="hero__container">
+
+      <img class="hero__avatar" src="http://octodex.github.com/images/jetpacktocat.png" alt="avatar de github">
+  
+      <div class="hero__input">
+        <h1 class="hero__brand">GITFIND</h1>
+        <form class="hero__form" action="/dist/pages/finder.html">
+          <input type="text" class="hero__form--text" name="name" id="textbox" placeholder="Ingrese su nombre">
+          <input type="submit" class="button--search" value="ENTRAR" onclick="printName()">
+        </form>
+      </div>
+    </div>
   </div>
-  <h1 id="greet">GITFIND</h1>
 </body>
-  <script src="./src/js/script.js"></script>
+  <script src="./dist/js/script.js"></script>
 </html>

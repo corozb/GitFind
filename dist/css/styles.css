@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.hero {
+  background-color: #6cd3cb;
+  height: 100vh;
+}
+
+.hero__container {
+  width: 95vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero img {
+  width: 40%;
+}
+
+.hero h1 {
+  text-shadow: 2px 6px 7px rgba(10, 4, 3, 0.39);
+  margin: 0;
+  margin-bottom: 50px;
+  font-weight: lighter;
+  font-size: 100px;
+  font-size: 6.25rem;
+  line-height: 9.375rem;
+}
+
+.hero__form--text {
+  width: 550px;
+  height: 62px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 20px;
+  color: #e26d67;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+}
+
+.hero .button--search {
+  display: block;
+  padding: 20px;
+  width: 300px;
+  border-radius: 5px;
+  margin-left: 250px;
+  color: #0d66af;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: black;
+  -webkit-box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 2.8125rem;
+}
+
+.hero .button--search:hover {
+  background: #1a1a1a;
+  -webkit-box-shadow: 6px 6px 8px 11px rgba(0, 0, 0, 0.09);
+          box-shadow: 6px 6px 8px 11px rgba(0, 0, 0, 0.09);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  color: #6cd3cb;
+  text-shadow: 0 0 10px #6cd3cb;
+}
+
+header {
+  height: 100px;
+  background-color: #e26d67;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header .header__greet span {
+  color: #ffbb28;
+  text-transform: uppercase;
+}
+
+header .searching {
+  padding: 0.125rem;
+}
+
+header .searching form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .searching .inputForm .inputSearch {
+  width: 25rem;
+  height: 4rem;
+  padding: 15px;
+  font-size: 20px;
+  color: #e26d67;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+}
+
+header .searching .inputForm__button {
+  height: 4rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: black;
+  -webkit-box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 3px 13px 1px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 2.8125rem;
+}
+
+header .searching .inputForm__button:hover {
+  background: #1a1a1a;
+  -webkit-box-shadow: 6px 6px 8px 11px rgba(0, 0, 0, 0.09);
+          box-shadow: 6px 6px 8px 11px rgba(0, 0, 0, 0.09);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  color: #6cd3cb;
+  text-shadow: 0 0 10px #6cd3cb;
+}
+
+header .searching .inputForm__button span {
+  font-size: 4rem;
+}
+
+header .searching .inputForm__button span:hover {
+  color: #6cd3cb;
+  text-shadow: 0 0 10px #6cd3cb;
+}
+
+.container {
+  border: 1px solid #e6e5e5;
+  width: 83vw;
+  max-width: 100%;
+  height: 72vh;
+  margin: 3% auto;
+  -webkit-box-shadow: 6px 7px 11px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 6px 7px 11px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  -ms-grid-rows: 80px auto;
+      grid-template-rows: 80px auto;
+      grid-template-areas: 'query favoritos' 'query star';
+}
+
+.favorites__text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: favoritos;
+  background: black;
+}
+
+.favorites {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: star;
+  background: yellow;
+  overflow: auto;
+}
+
+.container-search {
+  overflow: auto;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: query;
+}
+
+.displayRepo {
+  background: red;
+}
+
+.toggle {
+  grid-area: toggle;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  header h1 {
+    text-align: center;
+  }
+  header .searching {
+    width: 26rem;
+  }
+  header .inputSearch {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .hero__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hero__form {
+    margin: 0 auto;
+    width: 350px;
+  }
+  #textbox.hero__form--text {
+    width: 350px;
+  }
+  .hero__form--button {
+    margin: 0 auto;
+  }
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 11rem;
+    margin: 0 auto;
+  }
+  .container {
+    height: 65vh;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'toggle ' 'show' 'show';
+  }
+  .container .container-search {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: show;
+  }
+  .container .favorites {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: show;
+    display: none;
+  }
+  .container .hide_column {
+    display: none;
+  }
+  .container .toggle_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -38,6 +38,7 @@ $inputSearch.addEventListener('submit', (e) => {
       }
       else {
         showError('Que repositorio deseas buscar?')
+        console.log(errorMessage)
       }
     })
     
@@ -64,7 +65,7 @@ $inputSearch.addEventListener('submit', (e) => {
         <p>${item.description}</p>
         <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
         <a href="${item.html_url}"# target="_blank">Visitar Repo</a>
-        <a id=${item.id} class="star">😛</a>
+        <a href="javascript:location.reload()" id=${item.id} class="star">😛</a>
       </div>
       `
   }
@@ -77,9 +78,11 @@ $inputSearch.addEventListener('submit', (e) => {
     starButton.addEventListener('click', () => {
       starButton.classList.add('selected') 
       addFavorite(item)
+      
     })
 
   })
+
 }
 
 let favList = []
@@ -97,7 +100,8 @@ function getFavorites() {
       <div class="container-favorite">
         <h3>A <span class="nickname">Cristian</span> le gusta</h3>
         <hr>
-        <h3><a href="${item.html_url}" target="_blank">${item.name}</a></h3>
+        <h3><a href="${item.url}" target="_blank">${item.name}</a></h3>
+        <a id=${item.id} class="deleted">😛</a>
       </div> 
       `
   
@@ -108,10 +112,7 @@ function getFavorites() {
       
     }) 
 
-    // removeItem
-
   }
-
 }
 
 function addFavorite(item) {
@@ -123,7 +124,7 @@ function addFavorite(item) {
   }
 
   favList.push(repository)
-  localStorage.setItem('repository',  JSON.stringify(favList))
+  localStorage.setItem('repository', JSON.stringify(favList))
   console.log(localStorage)
   
 }
@@ -131,6 +132,25 @@ function addFavorite(item) {
 getFavorites()
 
 
+// Toggle Button
+// console.log(window.innerWidth)
+// function toggleButton () {
+  // Get the checkbox
+  // const $checkBox = document.getElementById('selectShow');
+  
+  // Get the DOM Elements
+  // const $checkSearch = document.querySelector('.container-search')
+  
+  // if ($checkBox.checked == true){
+    
+    // $favorites.style.display = 'none';
+    // $checkSearch.style.display = "block";
+  // } else {
+    // console.log('deschekeado')
+    // $checkSearch.style.display = "none";
+    // $favorites.style.display = 'block';
+//   }
+// }
 
 
 
