@@ -2,7 +2,7 @@
 ---
 This project it's about a page where you can make a search with a specific topic and show us the github repositories. It's consuming the GITHUB API.
 
-[Live](https://corozb.github.io/GitFind/)
+### [Live](https://corozb.github.io/GitFind/)
 
 #### First Page:
 Put your name on the first page and click
