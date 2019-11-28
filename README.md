@@ -23,3 +23,8 @@ The input form make a validation if there's a keyword, instead show a error mess
 
 ---
 > **Note:** Without authentication you can search just 60 queries per hour. If you want more with OAuth register you can make over 5.000 queries 
+
+### Tools used:
+- Vanilla Javascript
+- CSS Grid and Flexbox
+- localStorage to save name and favorites
