@@ -10,12 +10,17 @@ $users.forEach(user => {
 })
 
 // ---- toggle button responsive
+const $hombre = document.querySelector('#hombre')
+const $mujer = document.querySelector('#mujer')
+const $toggle = document.querySelector('.toggle')
+
+
 const $checkSearch = document.querySelector('.container-search')
 const $checkBox = document.getElementById("myCheck")
 
 const hideColumn = () => {
 
-  if ($checkBox.checked == true){
+  if ($checkBox.checked == false){
 
     $favorites.style.display = "block";
     $checkSearch.style.display = 'none';

@@ -224,6 +224,13 @@ header .searching .inputForm__button span:hover {
 
 .toggle {
   grid-area: toggle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
 }
 
 .displayRepo {
@@ -396,6 +403,100 @@ header .searching .inputForm__button span:hover {
 .container-favorite .repoFavo a {
   color: #ffbb28;
   text-decoration: none;
+}
+
+.knobs, .layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 60vw;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+#button-18 .knobs:before, #button-18 .knobs span {
+  content: 'BUSQUEDA';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  background-color: #e26d67;
+  border-radius: 2px;
+}
+
+#button-18 .knobs:before {
+  top: 38%;
+  left: 78px;
+  width: 62px;
+  height: 10px;
+  margin-top: -5px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+#button-18 .knobs span {
+  width: 15rem;
+  height: 1.9rem;
+  padding: 9px 4px;
+  -webkit-transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  z-index: 1;
+}
+
+#button-18 .checkbox:active + .knobs span {
+  width: 58px;
+}
+
+#button-18 .checkbox:checked:active + .knobs span {
+  margin-left: -38px;
+}
+
+#button-18 .checkbox:checked + .knobs:before {
+  content: 'FAVORITOS';
+  left: 17rem;
+}
+
+#button-18 .checkbox:checked + .knobs span {
+  left: 13rem;
+  background-color: black;
+}
+
+#button-18 .checkbox:checked ~ .layer {
+  background-color: #ebf7fc;
 }
 
 @media (max-width: 600px) {
