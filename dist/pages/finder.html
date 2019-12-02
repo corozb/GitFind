@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/icons.css">
 </head>
-<body>
+<body onresize="resized()">
     <header>
       <h1 class="header__greet">Hola <span class="nickname">Cristian</span>!! Bienvenido a <span>GITFIND</span> </h1>
       <section class="searching">
@@ -22,7 +22,7 @@
 
     <div class="container">
       <div class="toggle">
-        <!-- <input type="checkbox" id="myCheck" onclick="myFunction()"> -->
+        <input type="checkbox" id="myCheck" onclick="hideColumn()">
       </div>
       
       <div id="search" class="container-search">
@@ -32,9 +32,13 @@
             <h3>${item.name}</h3>
             <hr>
             <p>${item.description}</p>
-            <p>Estrellas: <span>${item.stargazers_count}</span></p>
-            <button><a class="card__botton" href="${item.html_url}" target="_blank">Visitar Repo</a></button>
-            <button class="star"><a href="javascript:location.reload()" id=${item.id}" class="icon-star-empty"></a></button>
+            <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
+
+            <div class="buttons">
+              <button><a class="card__botton" href="${item.html_url}" target="_blank">Visitar Repo</a></button>
+
+              <a id=${item.id} href="javascript:location.reload()"  class="icon-star-empty"></a>
+            </div>
           </div> -->
 
         </div>

@@ -1,6 +1,6 @@
+// Name in localStorage
 const printName = () => {
   const $name = document.getElementById('textbox').value
-  console.log($name)
   localStorage.setItem('username', $name)
 }
 
@@ -8,6 +8,35 @@ const $users = document.querySelectorAll('.nickname')
 $users.forEach(user => {
   user.innerHTML = localStorage.getItem('username')
 })
+
+// ---- toggle button responsive
+const $checkSearch = document.querySelector('.container-search')
+const $checkBox = document.getElementById("myCheck")
+
+const hideColumn = () => {
+
+  if ($checkBox.checked == true){
+
+    $favorites.style.display = "block";
+    $checkSearch.style.display = 'none';
+  } else {
+    $favorites.style.display = "none";
+    $checkSearch.style.display = 'block';
+  }
+}
+
+
+function resized() {
+  let w = window.outerWidth
+
+  if (w > 830) {
+    $favorites.style.display = "block"
+    $checkSearch.style.display = 'block'
+  } else {
+    hideColumn()
+  }
+
+}
 
 
 
@@ -38,7 +67,6 @@ $inputSearch.addEventListener('submit', (e) => {
       }
       else {
         showError('Que repositorio deseas buscar?')
-        console.log(errorMessage)
       }
     })
     
@@ -60,13 +88,17 @@ $inputSearch.addEventListener('submit', (e) => {
    repoSearch.map(item => {
       $displayRepo.innerHTML += `
       <div class="container-box">
-            <h3>${item.name}</h3>
-            <hr>
-            <p>${item.description}</p>
-            <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
-            <button><a class="card__botton" href="${item.html_url}" target="_blank">Visitar Repo</a></button>
-            <a id=${item.id} href="javascript:location.reload()"  class="icon-star-empty"></a>
-          </div>
+        <h3>${item.name}</h3>
+        <hr>
+        <p>${item.description}</p>
+        <p>cantidad estrellas: <span>${item.stargazers_count}</span></p>
+
+        <div class="buttons">
+          <button><a class="card__botton" href="${item.html_url}" target="_blank">Visitar Repo</a></button>
+
+          <a id=${item.id} href="javascript:location.reload()"  class="icon-star-empty"></a>
+        </div>
+      </div>
       `
   }
 
@@ -75,11 +107,9 @@ $inputSearch.addEventListener('submit', (e) => {
 
   repoSearch.map(item => {
     const starButton = document.getElementById(item.id)
-    console.log(starButton)
     starButton.addEventListener('click', () => {
       starButton.classList.add('selected') 
       addFavorite(item)
-      
     })
 
   })
@@ -141,21 +171,5 @@ detectScrollEnd = () => {
 }
 
 getFavorites()
-
-// function myFunction() {
-//   const checkBox = document.getElementById("myCheck");
-//   const $checkSearch = document.querySelector('.container-search')
-
-
-
-//   if (checkBox.checked == true){
-//     $favorites.style.display = "block";
-//     $checkSearch.style.display = 'none';
-//   } else {
-//     $favorites.style.display = "none";
-//     $checkSearch.style.display = 'block';
-//   }
-
-// }
 
 
